@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Body */
+body {
+	font-family: 'Manrope', sans-serif;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #343f52;
+}
+a {
+	text-decoration: none;
+	color: #1b1b1b;
+}
+a:hover {
+	color: #40798C;
+}
+.fw-bolder {
+	font-weight: 800 !important;
+}
+.web-agency-nav   a.nav-link {
+	padding-top: 35px !important;
+	padding-bottom: 35px !important;
+}
+.background-img {
+	background-image: url(../img/banner-bg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1450px;
+}
+
+/* Custom Css */
+.btn-lg {
+	padding: 15px 36px;
+	font-size: 17px;
+	font-weight: 600;
+	border-radius: 100px;
+}
+.btn-warning {
+	background-color: #40798C !important;
+	border-color: #40798C !important;
+	color: #ffffff !important;
+}
+.btn-warning:hover {
+	background-color: #2C6578 !important;
+	border-color: #2C6578 !important;
+}
+.bg-warning {
+	background-color: #40798C !important;
+}
+.text-warning {
+	color: #40798C !important;
+}
+.icon-sm {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hover\:bg-warning:hover {
+	background-color: #2C6578 !important;
+}
+
+/* Navbar */
+.web-agency-nav .navbar-nav .nav-link {
+	color: #333333;
+	padding: 10px 0;
+}
+.web-agency-nav .navbar-nav .nav-link.active {
+	color: #000000;
+}
+.web-agency-nav .navbar-nav .nav-link:hover {
+	color: #000000;
+}
+
+/* Sidebar Nav */
+.sidebar-nav .navbar-nav .nav-link {
+	color: #fff;
+	font-size: 20px;
+}
+.sidebar-nav .navbar-nav .nav-link.active,
+.sidebar-nav .navbar-nav .nav-link:hover {
+	color: #40798C;
+}
+
+/* Index */
+.projects img,
+.project p {
+	transition: transform .4s;
+}
+.projects:hover img {
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	opacity: 0.5 !important;
+}
+.projects:hover p {
+	opacity: 1 !important;
+}
+.zoom-img img {
+	transition: transform .4s;
+}
+.zoom-img:hover img {
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.testimonial-img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+}
+
+/* Mobile Media  */
+@media (max-width:992px) {
+	.m-none {
+		display: none;
+	}
+}
