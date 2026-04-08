@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
+
 export default function Footer() {
 
   useEffect(() => {
@@ -42,18 +43,18 @@ We are a Digitalanindia Technologies team behind many successful digital marketi
 
 <div className="footerlinks">
 <b>
-<a href="#" className="text-light">
+<Link to="#" className="text-light">
 Digital Marketing
-</a>
+</Link>
 </b>
 
 <ul>
-<li><a href="#">Digital Marketing for Real Estate</a></li>
-<li><a href="#">Digital Marketing for Hotels</a></li>
-<li><a href="#">ORM</a></li>
-<li><a href="#">Digital Marketing By Location</a></li>
-<li><a href="#">App Store Optimization</a></li>
-<li><a href="#">Email Marketing</a></li>
+<li><Link to="#">Digital Marketing for Real Estate</Link></li>
+<li><Link to="#">Digital Marketing for Hotels</Link></li>
+<li><Link to="#">ORM</Link></li>
+<li><Link to="#">Digital Marketing By Location</Link></li>
+<li><Link to="#">App Store Optimization</Link></li>
+<li><Link to="#">Email Marketing</Link></li>
 </ul>
 
 </div>
@@ -67,18 +68,18 @@ Digital Marketing
 <div className="footerlinks">
 
 <b>
-<a href="#" className="text-light">
+<Link to="#" className="text-light">
 Search Engine Optimization
-</a>
+</Link>
 </b>
 
 <ul>
-<li><a href="#">Local Seo</a></li>
-<li><a href="#">Seo For Small Business</a></li>
-<li><a href="#">Seo By Industry</a></li>
-<li><a href="#">Seo By Location</a></li>
-<li><a href="#">Link Building</a></li>
-<li><a href="#">Google My Business</a></li>
+<li><Link to="#">Local Seo</Link></li>
+<li><Link to="#">Seo For Small Business</Link></li>
+<li><Link to="#">Seo By Industry</Link></li>
+<li><Link to="#">Seo By Location</Link></li>
+<li><Link to="#">Link Building</Link></li>
+<li><Link to="#">Google My Business</Link></li>
 </ul>
 
 </div>
@@ -92,18 +93,18 @@ Search Engine Optimization
 <div className="footerlinks">
 
 <b>
-<a href="#" className="text-light">
+<Link to="#" className="text-light">
 Web Designing & Development
-</a>
+</Link>
 </b>
 
 <ul>
-<li><a href="#">Website Re-Design</a></li>
-<li><a href="#">Laravel Website Development</a></li>
-<li><a href="#">Website Design By Location</a></li>
-<li><a href="#">Cms Website Development</a></li>
-<li><a href="#">CodeIgniter Web Development</a></li>
-<li><a href="#">Landing Page Design</a></li>
+<li><Link to="#">Website Re-Design</Link></li>
+<li><Link to="#">Laravel Website Development</Link></li>
+<li><Link to="#">Website Design By Location</Link></li>
+<li><Link to="#">Cms Website Development</Link></li>
+<li><Link to="#">CodeIgniter Web Development</Link></li>
+<li><Link to="#">Landing Page Design</Link></li>
 </ul>
 
 </div>
@@ -123,17 +124,17 @@ Web Designing & Development
 <div className="footerlinks">
 
 <b>
-<a href="#" className="text-light">
+<Link to="#" className="text-light">
 Packages
-</a>
+</Link>
 </b>
 
 <ul>
-<li><a href="#">Seo Packages</a></li>
-<li><a href="#">SMO Package</a></li>
-<li><a href="#">ORM Packages</a></li>
-<li><a href="#">Designing Package</a></li>
-<li><a href="#">Development Package</a></li>
+<li><Link to="#">Seo Packages</Link></li>
+<li><Link to="#">SMO Package</Link></li>
+<li><Link to="#">ORM Packages</Link></li>
+<li><Link to="#">Designing Package</Link></li>
+<li><Link to="#">Development Package</Link></li>
 </ul>
 
 </div>
@@ -160,7 +161,7 @@ Packages
 <p>
 Contact Details :
 <strong>
-Info@digitalanindia.com | <a href="tel:+919599443663" style={{color:"white"}}>+91 9599443663</a> | <a href="tel:+918368955806" style={{color:"white"}}>+91 8368955806</a>
+Info@digitalanindia.com | <Link to="tel:+919599443663" style={{color:"white"}}>+91 9599443663</Link> | <Link to="tel:+918368955806" style={{color:"white"}}>+91 8368955806</Link>
 </strong>
 </p>
 </div>
@@ -191,11 +192,11 @@ Info@digitalanindia.com | <a href="tel:+919599443663" style={{color:"white"}}>+9
 
 <b>Follow Us : </b>
 
- <a href="#"><i className="fab fa-facebook"></i></a>
-  <a href="#"><i className="fab fa-twitter"></i></a>
-  <a href="#"><i className="fab fa-linkedin"></i></a>
-  <a href="#"><i className="fab fa-instagram"></i></a>
-  <a href="#"><i className="fab fa-youtube"></i></a>
+ <Link to="#"><i className="fab fa-facebook"></i></Link>
+  <Link to="#"><i className="fab fa-twitter"></i></Link>
+  <Link to="#"><i className="fab fa-linkedin"></i></Link>
+  <Link to="#"><i className="fab fa-instagram"></i></Link>
+  <Link to="#"><i className="fab fa-youtube"></i></Link>
 
 </p>
 
@@ -222,7 +223,7 @@ Info@digitalanindia.com | <a href="tel:+919599443663" style={{color:"white"}}>+9
 
 <div className="col-sm-6 col-lg-6">
 <div className="coprightlinks">
-<a href="#">Sitemap</a>
+<Link to="#">Sitemap</Link>
 </div>
 </div>
 
