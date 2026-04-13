@@ -1,11 +1,27 @@
 import Footer from "../component/Footer";
 import Banner1 from "../component/Banner1";
 import Faqs from "../component/Faqs";
-import blog1 from "../assets/img/blog1.jpeg"
-import blog2 from "../assets/img/blog2.png"
-import blog3 from "../assets/img/blog3.jpg"
+// import blog1 from "../assets/img/blog1.jpeg"
+// import blog2 from "../assets/img/blog2.png"
+// import blog3 from "../assets/img/blog3.jpg"
+import axios from "axios";
+import React,{useState,useEffect} from "react";
 
 export default function Blogs() {
+  const [blogs,setBlogs] = useState([]);
+  const base_url = process.env.REACT_APP_BASE_URL || "https://digitalanindia.com";
+  const fetchBlogs = async ()=> {
+    try {
+  const response = await axios.get(`${base_url}/api/blogs`);
+  setBlogs(response.data);
+    } catch(err) {
+      console.error(err);
+    }
+  }
+
+useEffect(() => {
+  fetchBlogs();
+},[]);
   return (
     <>
       <Banner1 />
@@ -18,36 +34,49 @@ export default function Blogs() {
           </h2>
 
           <div className="row">
+         {
 
-            {/* Blog 1 */}
-            <div className="col-md-4">
-              <div style={{
-                background:"#fff",
-                borderRadius:"10px",
-                boxShadow:"0 0 10px #ddd",
-                overflow:"hidden",
-                marginBottom:"30px"
-              }}>
-                <img
-                  src={ blog1}
-                  alt="blog"
-                  style={{ width:"100%",height:"224px" }}
-                />
+        blogs.map((blog) => {
+  return (
+    <div className="col-md-4" key={blog.id}>
+      <div
+        style={{
+          background: "#fff",
+          borderRadius: "10px",
+          boxShadow: "0 0 10px #ddd",
+          overflow: "hidden",
+          marginBottom: "30px",
+        }}
+      >
+        <img
+          src={blog.image}
+          alt="blog"
+          style={{ width: "100%", height: "224px" }}
+        />
 
-                <div style={{ padding:"20px" }}>
-                  <h5>The significance of online marketing in 2026</h5>
-                  <p>
-                    Online promotion assists companies in expanding their presence through search engine optimization, social media outreach, and sponsored advertisements.
+        <div style={{ padding: "20px" }}>
+          <h5>{blog.title}</h5>
 
-                  </p>
+          <p>
+  {blog.content
+    ?.replace(/<[^>]+>/g, "") // remove HTML tags
+    .slice(0, 100)}...
+</p>
 
-                  <button className="btn" style={{background:"#1E3A8A", color:"white"}}>Read More</button>
-                </div>
-              </div>
-            </div>
-
-            {/* Blog 2 */}
-            <div className="col-md-4">
+          <button
+            className="btn"
+            style={{ background: "#1E3A8A", color: "white" }}
+          >
+            Read More
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+})
+           
+ } 
+            {/* <div className="col-md-4">
               <div style={{
                 background:"#fff",
                 borderRadius:"10px",
@@ -73,7 +102,6 @@ link building, and content refinement.
               </div>
             </div>
 
-            {/* Blog 3 */}
             <div className="col-md-4">
               <div style={{
                 background:"#fff",
@@ -97,7 +125,7 @@ A web presence is essential for companies to establish trust, draw in clients, a
                    <button className="btn" style={{background:"#1E3A8A", color:"white"}}>Read More</button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
