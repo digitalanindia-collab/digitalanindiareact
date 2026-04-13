@@ -1,7 +1,7 @@
 import { useEffect } from "react"; 
 import AOS from "aos";
  import "aos/dist/aos.css"; 
-
+ import Navbar from "../component/Navbar"; 
  export default function Faq() { 
     useEffect(() => {
          AOS.init({ duration: 1000 }); }, []); 

@@ -8,7 +8,12 @@ import { Routes,Route } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
 import Blogs from './pages/Blogs';
+import BlogsGet from './pages/admin/BlogsGet';
+import BlogsEdit from './pages/admin/BlogsEdit';
+import BlogsView from './pages/admin/BlogsView';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Blog from './pages/admin/Blogs';
 import Location from './pages/Location';
 import Contact from './pages/Contact';
 import Services from './pages/ServicesPage'
@@ -42,6 +47,12 @@ function App() {
         <Route path="/packages" element={<Packages />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/careers" element={<Career />} />
+         <Route path="/admin" element={<Dashboard />} />
+           <Route path="/admin/blogs" element={<Blog />} />
+            <Route path="/admin/blogs-get" element={<BlogsGet />} />
+            <Route path="/admin/blogs/:id/edit" element={<BlogsEdit />} />
+              <Route path="/admin/blogs/:id/view" element={<BlogsView />} />
+
       </Routes>
   </>
  )
