@@ -59,7 +59,7 @@ const rows = blogs.map((blog, index) => ({
   srNo: index + 1,
   title: blog.title,
   content: getPreviewText(blog.content),
-  image: blog.image,
+  image: blog.image_url,
 }));
 
 

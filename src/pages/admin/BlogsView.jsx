@@ -9,16 +9,17 @@ import axios from "axios";
 const BlogsView = () => {
   const token = localStorage.getItem("token");
 const [data, setData] = useState({});
- const base_url =
-  process.env.REACT_APP_BASE_URL || "https://digitalanindia.com";
-
+  const base_url = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:8000";
 const { id } = useParams();
-
 const viewBlog = async () => {
   try {
-    const res = await axios.get(`${base_url}/api/blogs/${id}/view`);
-  setData(res.data);
-    console.log(res.data);
+    const res = await axios.get(`${base_url}/api/blogs/${id}`,{
+      headers: {
+        Authorization:`Bearer ${token}`,
+      }
+    });
+  setData(res.data.data);
+    console.log(res.data.data);
   } catch (err) {
     console.log(err);
   }

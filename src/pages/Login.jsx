@@ -1,21 +1,35 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 export default function AdminLogin() {
+  const base_url = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:8000";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-
-    // TEMP LOGIN (replace with API later)
-    if (email === "admin@gmail.com" && password === "123456") {
-      localStorage.setItem("adminAuth", "true");
-      navigate("/admin");
-    } else {
-      alert("Invalid credentials");
-    }
+try {
+const response = await axios.post(`${base_url}/api/admin`, {
+  email,
+  password
+});
+if (response.status === 200) {
+  // console.log(response.data);
+  const token = response.data.token;
+  localStorage.setItem("token", token); 
+  localStorage.setItem("adminAuth", "true");
+  navigate("/admin");
+} else {
+  alert("Invalid credentials");
+}
+}catch (error) {
+  console.error("Login error:", error);
+  alert(
+    error?.response?.data?.error ||
+    "Something went wrong"
+  );
+}
   };
 
   return (

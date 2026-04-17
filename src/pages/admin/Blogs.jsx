@@ -44,9 +44,10 @@ function MyEditor({ description, setDescription }) {
 
 // ✅ Main Component
 const Blogs = () => {
+      
   const navigation = useNavigate();
-   const base_url =
-  process.env.REACT_APP_BASE_URL || "https://digitalanindia.com";
+
+  const base_url = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:8000";
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [image, setImage] = React.useState(null);

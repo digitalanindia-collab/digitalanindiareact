@@ -6,25 +6,33 @@ import Sidebar from "../../component/admin/Sidebar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 const BlogsGet = () => {
-  const token = localStorage.getItem("token");
-  const BASE_URL = process.env.REACT_APP_BASE_URL || "https://digitalanindia.com";
-  //console.log("BASE_URL:", BASE_URL);
+      const token = localStorage.getItem("token");
+  console.log("dd");
+  const base_url = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:8000";
   const [blogs, setBlogs] = useState([]);
-    const fetchBlogs = async () => {
-      try {
-        const res = await axios.get(`${BASE_URL}/api/blogs`);
-        console.log(res.data);
-        setBlogs(res.data);
-      } catch (err) {
-        console.error(err);
-        alert("Error fetching blogs.");
-      }
-    };
+   const fetchBlogs = async () => {
+  try {
+
+    const res = await axios.get(`${base_url}/api/blogs`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(res.data.data);
+    setBlogs(res.data.data);
+  } catch (err) {
+    console.error(err);
+  }
+}
     const handleDelete = async (id) => {
   const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
   if (!confirmDelete) return;
   try {
-    await axios.delete(`${BASE_URL}/api/blogs/delete/${id}`);
+    await axios.delete(`${base_url}/api/blogs/${id}`,{
+      headers: {
+        Authorization:`Bearer ${token}`
+      }
+    });
     alert("Blog deleted successfully!");
   // setBlogs((prev) => prev.filter((blogs) => blogs._id !== id));
   setBlogs((prev) => prev.filter((blog) => blog._id !== id));

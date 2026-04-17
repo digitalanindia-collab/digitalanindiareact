@@ -41,8 +41,8 @@ function MyEditor({ description, setDescription }) {
 
 /* ================= Main Component ================= */
 const BlogsEdit = () => {
-  const base_url =
-    process.env.REACT_APP_BASE_URL || "https://digitalanindia.com";
+const token = localStorage.getItem("token");
+   const base_url = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:8000";
 
   const { id } = useParams();
 
@@ -55,10 +55,14 @@ const BlogsEdit = () => {
   /* ===== Fetch Blog ===== */
   const editBlog = async () => {
     try {
-      const res = await axios.get(`${base_url}/api/blogs/${id}/edit`);
-      setTitle(res.data.title);
-      setDescription(res.data.content);
-      setExistingImage(res.data.image);
+      const res = await axios.get(`${base_url}/api/blogs/${id}`,{
+        headers:{
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
+      });
+      setTitle(res.data.data.title);
+      setDescription(res.data.data.content);
+      setExistingImage(res.data.data.image_url);
     } catch (err) {
       console.log(err);
     }
@@ -75,12 +79,12 @@ const BlogsEdit = () => {
 
     const formData = new FormData();
     formData.append("title", title);
-    formData.append("description", description);
+    formData.append("content", description);
     if (image) formData.append("image", image);
 
     try {
       await axios.put(
-        `${base_url}/api/blogs/${id}/update`,
+        `${base_url}/api/blogs/${id}`,
         formData,
         {
           headers: {

@@ -9,11 +9,13 @@ import React,{useState,useEffect} from "react";
 
 export default function Blogs() {
   const [blogs,setBlogs] = useState([]);
-  const base_url = process.env.REACT_APP_BASE_URL || "https://digitalanindia.com";
+ const base_url = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:8000";
   const fetchBlogs = async ()=> {
     try {
-  const response = await axios.get(`${base_url}/api/blogs`);
-  setBlogs(response.data);
+
+  const response = await axios.get(`${base_url}/api/blog/frontend`);
+  console.log(response.data.data);
+  setBlogs(response.data.data);
     } catch(err) {
       console.error(err);
     }
