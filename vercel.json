@@ -1,5 +1,6 @@
 {
     "rewrites": [
-        { "source": "/api/:path*", "destination": "https://digitalanindia.com/api/:path*" }
+        { "source": "/api/(.*)",
+         "destination": "https://digitalanindia.com/api/:path*" }
     ]
 }
